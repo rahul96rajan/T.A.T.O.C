@@ -8,5 +8,6 @@ public class Totac {
 		WebDriver driver = new FirefoxDriver();
 		
 		driver.get("http://10.0.1.86/tatoc");
+		//driver.findElement(By.className("greenbox")).click();
 	}
 }
