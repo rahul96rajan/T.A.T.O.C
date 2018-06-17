@@ -10,7 +10,9 @@ public class TatocBeginner {
 		
 		driver.get("http://10.0.1.86/tatoc");
 		
-		//driver.findElement(By.className("greenbox")).click();
+		driver.get("http://10.0.1.86/tatoc");
+		driver.findElement(By.linkText("Basic Course")).click();
+		driver.findElement(By.className("greenbox")).click();
 		
 	}
 }
