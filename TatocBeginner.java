@@ -13,8 +13,10 @@ public class Totac {
 		
 		driver.get("http://10.0.1.86/tatoc");
 		driver.findElement(By.linkText("Basic Course")).click();
+		//GRID GATE
 		driver.findElement(By.className("greenbox")).click();
 		
+		//FRAME DUNGEON
 		boolean found=false;
 		driver.switchTo().frame("main");
 		while(found==false){	
@@ -36,5 +38,16 @@ public class Totac {
 				driver.findElement(By.linkText("Repaint Box 2")).click();
 			}
 		}
+		
+		// DRAG AND DROP
+		driver.get("http://10.0.1.86/tatoc/basic/drag");
+		WebElement from = driver.findElement(By.id("dragbox"));
+		WebElement to = driver.findElement(By.id("dropbox"));
+      		Actions act=new Actions(driver);							
+        	act.dragAndDrop(from, to).build().perform();
+        	driver.findElement(By.linkText("Proceed")).click();
+		
+		//Popup Windows
+		
 	}
 }
