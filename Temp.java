@@ -55,18 +55,21 @@ public class Totac {
         
         
         //POP-UP WINDOW
+        //driver.get("http://10.0.1.86/tatoc/basic/windows");
+        String mainWindow = driver.getWindowHandle();
+        String childWindow = null;
         driver.findElement(By.linkText("Launch Popup Window")).click();
-        String MainWindow = driver.getWindowHandle();
-        String subWindow = null;
-        //Set<String> winhandle = driver.getWindowHandles();
-        for (String handle : driver.getWindowHandles()) {
-            subWindow = handle;
-        }
-        driver.switchTo().window(subWindow);
-        driver.findElement(By.id("name")).sendKeys("Rahul");
-        driver.findElement(By.id("submit")).click();
-        driver.switchTo().window(MainWindow);
-        driver.findElement(By.linkText("Proceed"));
+        Set<String> windows = driver.getWindowHandles();
+        Iterator<String> iter = windows.iterator();
+        while(iter.hasNext()) {
+        	childWindow = iter.next();        	
+        }              
+        driver.switchTo().window(childWindow);
+    	driver.findElement(By.id("name")).sendKeys("Rahul");
+    	driver.findElement(By.id("submit")).click();
+        
+        driver.switchTo().window(mainWindow);
+        driver.findElement(By.linkText("Proceed")).click();
         
         
         
