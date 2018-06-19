@@ -61,7 +61,9 @@ public class Totac {
         driver.findElement(By.linkText("Generate Token")).click();
         String TokenTmp = driver.findElement(By.id("token")).getText();
         String Token = TokenTmp.substring(7, TokenTmp.length());
-        System.out.println(Token);
+        Cookie cookie =new Cookie("Token",Token);
+        driver.manage().addCookie(cookie);
+        driver.findElement(By.linkText("Proceed")).click();
         
         
 	
