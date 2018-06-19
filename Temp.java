@@ -17,9 +17,11 @@ public class Totac {
 		
 		driver.get("http://10.0.1.86/tatoc");
 		driver.findElement(By.linkText("Basic Course")).click();
-		//
+		
+		//GRID GATE
 		driver.findElement(By.className("greenbox")).click();
 		
+		//FRAME DUNGEON
 		boolean found=false;
 		driver.switchTo().frame("main");
 		while(found==false){	
@@ -42,6 +44,8 @@ public class Totac {
 			}
 		}
 		
+		
+		//DRAG AND DROP
 		driver.switchTo().defaultContent();
 		WebElement from = driver.findElement(By.id("dragbox"));
 		WebElement to = driver.findElement(By.id("dropbox"));
@@ -49,11 +53,12 @@ public class Totac {
         act.dragAndDrop(from, to).build().perform();
         driver.findElement(By.linkText("Proceed")).click();
         
-        //Pop-Up Windows
+        
+        //POP-UP WINDOW
         driver.findElement(By.linkText("Launch Popup Window")).click();
         String MainWindow=driver.getWindowHandle();
         String subWindow = null;
-        Set<String> windows = driver.getWindowHandles();
+
         
 	
         
