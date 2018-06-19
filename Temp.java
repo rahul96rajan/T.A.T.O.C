@@ -1,4 +1,4 @@
-package assignmentOneTOTAC;
+
 
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.Cookie;
