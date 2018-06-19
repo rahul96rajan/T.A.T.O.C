@@ -41,7 +41,7 @@ public class Totac {
 		}
 		
 		// DRAG AND DROP
-		driver.get("http://10.0.1.86/tatoc/basic/drag");
+
 		WebElement from = driver.findElement(By.id("dragbox"));
 		WebElement to = driver.findElement(By.id("dropbox"));
       		Actions act=new Actions(driver);							
