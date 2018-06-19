@@ -1,4 +1,4 @@
-
+package assignmentOneTOTAC;
 
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.Cookie;
@@ -56,11 +56,18 @@ public class Totac {
         
         //POP-UP WINDOW
         driver.findElement(By.linkText("Launch Popup Window")).click();
-        String MainWindow=driver.getWindowHandle();
+        String MainWindow = driver.getWindowHandle();
         String subWindow = null;
-
+        //Set<String> winhandle = driver.getWindowHandles();
+        for (String handle : driver.getWindowHandles()) {
+            subWindow = handle;
+        }
+        driver.switchTo().window(subWindow);
+        driver.findElement(By.id("name")).sendKeys("Rahul");
+        driver.findElement(By.id("submit")).click();
+        driver.switchTo().window(MainWindow);
+        driver.findElement(By.linkText("Proceed"));
         
-	
         
         
         //COOKIE 
